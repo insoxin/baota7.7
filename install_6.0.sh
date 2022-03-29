@@ -702,7 +702,8 @@ echo "
 +----------------------------------------------------------------------
 | The WebPanel URL will be http://SERVER_IP:8888 when installed.
 +----------------------------------------------------------------------
-
+ "
+ 
 Install_Main
 echo > /www/server/panel/data/bind.pl
 echo -e "=================================================================="
@@ -720,5 +721,3 @@ echo -e "=================================================================="
 endTime=`date +%s`
 ((outTime=($endTime-$startTime)/60))
 echo -e "Time consumed:\033[32m $outTime \033[0mMinute!"
-
-
