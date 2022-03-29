@@ -1,3 +1,4 @@
+#!/bin/bash
 while true
 do
     result=`ps aux|grep frpc.ini|grep -v grep|wc -l`
