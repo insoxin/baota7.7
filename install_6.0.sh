@@ -702,15 +702,6 @@ echo "
 +----------------------------------------------------------------------
 | The WebPanel URL will be http://SERVER_IP:8888 when installed.
 +----------------------------------------------------------------------
-"
-while [ "$go" != 'y' ] && [ "$go" != 'n' ]
-do
-	read -p "Do you want to install Bt-Panel to the $setup_path directory now?(y/n): " go;
-done
-
-if [ "$go" == 'n' ];then
-	exit;
-fi
 
 Install_Main
 echo > /www/server/panel/data/bind.pl
