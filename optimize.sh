@@ -30,6 +30,7 @@ sed -i "/index = self.sitePath+'\/index.html'/, /public.ExecShell('chown -R www:
 sed -i "/doc404 = self.sitePath+'\/404.html'/, /public.ExecShell('chown -R www:www ' + doc404)/d" /www/server/panel/class/panelSite.py
 echo "已去除创建网站自动创建的垃圾文件."
 
+rm -f /www/server/panel/data/admin_path.pl
 sed -i "s/root \/www\/server\/nginx\/html/return 400/" /www/server/panel/class/panelSite.py
 if [ -f /www/server/panel/vhost/nginx/0.default.conf ]; then
 	sed -i "s/root \/www\/server\/nginx\/html/return 400/" /www/server/panel/vhost/nginx/0.default.conf
