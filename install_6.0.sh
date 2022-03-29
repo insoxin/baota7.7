@@ -74,12 +74,6 @@ Install_Check(){
 	echo -e "Web/mysql service is alreday installed,Can't install panel"
 	echo -e "----------------------------------------------------"
 	echo -e "已知风险/Enter yes to force installation"
-	read -p "输入yes强制安装: " yes;
-	if [ "$yes" != "yes" ];then
-		echo -e "------------"
-		echo "取消安装"
-		exit;
-	fi
 	INSTALL_FORCE="true"
 }
 System_Check(){
