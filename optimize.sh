@@ -44,6 +44,9 @@ sed -i "/p = threading.Thread(target=check_files_panel)/, /p.start()/d" /www/ser
 sed -i "/p = threading.Thread(target=check_panel_msg)/, /p.start()/d" /www/server/panel/task.py
 echo "已去除消息推送与文件校验."
 
+sed -i "/^logs_analysis()/d" /www/server/panel/script/site_task.py
+sed -i "s/run_thread(cloud_check_domain,(domain,))/return/" /www/server/panel/class/public.py
+echo "已去除面板日志与绑定域名上报."
 if [ ! -f /www/server/panel/data/not_recommend.pl ]; then
 	echo "True" > /www/server/panel/data/not_recommend.pl
 fi
