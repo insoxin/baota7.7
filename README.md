@@ -35,6 +35,15 @@ wget -O optimize.sh https://raw.githubusercontent.com/insoxin/BTinstall_6.0/main
 ```
 适用宝塔面板版本：7.7
 
+
+
+```
+sudo journalctl --vacuum-size=1M
+
+```
+
+限制日志1M
+
 全部使用补丁的方式，而不是替换文件的方式，方便后续升级版本的修改。
 
 
