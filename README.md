@@ -35,12 +35,27 @@ wget -O optimize.sh https://raw.githubusercontent.com/insoxin/BTinstall_6.0/main
 ```
 适用宝塔面板版本：7.7
 
+其他备份
 
+开ipv6
+```
+echo “True” > /www/server/panel/data/ipv6.pl
+```
+开启ssl
+
+```
+
+echo “True” > /www/server/panel/data/ssl.pl
+
+```
+限制日志
 
 ```
 sudo journalctl --vacuum-size=1M
 
 ```
+
+
 
 限制日志1M
 
