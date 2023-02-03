@@ -5,7 +5,7 @@
 
 因此这里分享一下7.7版本的安装脚本，是官方免费版的。
 ```
-wget -O install.sh https://raw.githubusercontent.com/insoxin/BTinstall_6.0/main/install_6.0.sh && bash install.sh
+wget -O install.sh https://raw.githubusercontent.com/insoxin/baota7.7/main/install_6.0.sh && bash install.sh
 ```
 
 升级到7.7版本命令：
@@ -30,7 +30,7 @@ curl http://f.cccyun.cc/bt/update6.sh|bash
 7.去除面板日志与网站绑定域名上报
 
 ```
-wget -O optimize.sh https://raw.githubusercontent.com/insoxin/BTinstall_6.0/main/optimize.sh && bash optimize.sh
+wget -O optimize.sh https://raw.githubusercontent.com/insoxin/baota7.7/main/optimize.sh && bash optimize.sh
 
 ```
 适用宝塔面板版本：7.7
