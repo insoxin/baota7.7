@@ -64,3 +64,14 @@ sudo journalctl --vacuum-size=1M
 
 适用宝塔面板7.9版本的命令（7.9版本不支持去除强制绑定账号）：
 wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
+
+
+
+docker
+
+
+https://hub.docker.com/r/insoxin/baota7.7
+
+docker pull insoxin/baota7.7
+
+"-port","8888","-username","admin123","-password","admin123"
