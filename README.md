@@ -59,6 +59,14 @@ sudo journalctl --vacuum-size=1M
 
 限制日志1M
 
+
+
+wget https://raw.githubusercontent.com/insoxin/baota7.7/main/panelPlugin.py
+
+chmod 755 panelPlugin.py
+
+mv panelPlugin.py /www/server/panel/class/panelPlugin.py
+
 全部使用补丁的方式，而不是替换文件的方式，方便后续升级版本的修改。
 
 
