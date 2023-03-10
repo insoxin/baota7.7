@@ -54,8 +54,14 @@ echo “True” > /www/server/panel/data/ssl.pl
 sudo journalctl --vacuum-size=1M
 
 ```
+删除木马检测
 
+```
+systemctl stop oneavd
+systemctl disable oneavd
+rm -rf /opt/threatbook
 
+```
 
 限制日志1M
 
