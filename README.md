@@ -80,6 +80,35 @@ mv panelPlugin.py /www/server/panel/class/panelPlugin.py
 wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
 
 
+```
+
+修改PHP安装包Zend/zend_multiply.h第65、66行左右（“+”为修改后内容），PHP5.x 版本通用。
+
+ 	__asm__("mul %0, %2, %3\n"										\
+ 		"smulh %1, %2, %3\n"										\
+ 		"sub %1, %1, %0, asr #63\n"									\
+-			: "=X"(__tmpvar), "=X"(usedval)							\
+-			: "X"(a), "X"(b));										\
++			: "=&r"(__tmpvar), "=&r"(usedval)						\
++			: "r"(a), "r"(b));										\
+ 	if (usedval) (dval) = (double) (a) * (double) (b);				\
+ 	else (lval) = __tmpvar;											\
+ } while (0)
+修改完之后就可以正常编译了。
+
+ 
+
+宝塔面板修改：
+
+php包安装路径/www/server/php/56/src，已经解压出了来，直接修改保存就可以了。
+
+因为宝塔编译安装要点时间，所以在一开始安装就修改，不要等到安装失败再修改。
+
+```
+
+
+
+
 
 docker
 
