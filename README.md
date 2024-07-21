@@ -76,7 +76,7 @@ mv panelPlugin.py /www/server/panel/class/panelPlugin.py
 全部使用补丁的方式，而不是替换文件的方式，方便后续升级版本的修改。
 
 
-# 解决软件商店无法加载
+解决软件商店无法加载
 
 ```
 curl https://download.bt.cn/tools/auto_node.sh | bash
