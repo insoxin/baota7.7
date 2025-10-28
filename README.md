@@ -121,7 +121,7 @@ wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
 ```
 ### 解决aarch64  编译安装PHP5.x 报错
 修改PHP安装包Zend/zend_multiply.h第65、66行左右（“+”为修改后内容），PHP5.x 版本通用。
-
+```
  	__asm__("mul %0, %2, %3\n"										\
  		"smulh %1, %2, %3\n"										\
  		"sub %1, %1, %0, asr #63\n"									\
@@ -132,6 +132,7 @@ wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
  	if (usedval) (dval) = (double) (a) * (double) (b);				\
  	else (lval) = __tmpvar;											\
  } while (0)
+ ```
 修改完之后就可以正常编译了。
 
  
