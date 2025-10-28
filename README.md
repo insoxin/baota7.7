@@ -66,14 +66,14 @@ rm -rf /opt/threatbook
 ### 懂得都懂
 
 
-
+```
 wget https://raw.githubusercontent.com/insoxin/baota7.7/main/panelPlugin.py
 
 chmod 755 panelPlugin.py
 
 mv panelPlugin.py /www/server/panel/class/panelPlugin.py
 
-
+```
 
 ### 解决软件商店无法加载
 
