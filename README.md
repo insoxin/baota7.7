@@ -35,26 +35,26 @@ wget -O optimize.sh https://raw.githubusercontent.com/insoxin/baota7.7/main/opti
 ```
 适用宝塔面板版本：7.7
 
-其他备份
+## 其他备份
 
-开ipv6
+### 开ipv6
 ```
 echo “True” > /www/server/panel/data/ipv6.pl
 ```
-开启ssl
+### 开启ssl
 
 ```
 
 echo “True” > /www/server/panel/data/ssl.pl
 
 ```
-限制日志
+### 限制日志
 
 ```
 sudo journalctl --vacuum-size=1M
 
 ```
-删除木马检测
+### 删除木马检测
 
 ```
 systemctl stop oneavd
@@ -63,7 +63,7 @@ rm -rf /opt/threatbook
 
 ```
 
-限制日志1M
+### 限制日志1M
 
 
 
@@ -73,22 +73,21 @@ chmod 755 panelPlugin.py
 
 mv panelPlugin.py /www/server/panel/class/panelPlugin.py
 
-全部使用补丁的方式，而不是替换文件的方式，方便后续升级版本的修改。
 
 
-解决软件商店无法加载
+### 解决软件商店无法加载
 
 ```
 curl https://download.bt.cn/tools/auto_node.sh | bash
 ```
 
-宝塔面板打开插件卡在获取模板界面或者无法下载文件：TypeError: send_file() got an unexpected keyword argument 'add_etags'
+### 宝塔面板打开插件卡在获取模板界面或者无法下载文件：TypeError: send_file() got an unexpected keyword argument 'add_etags'
 
 ```
 /www/server/panel/pyenv/bin/python3.7 -m pip install --upgrade pip
 ```
 
-宝塔面板里的ssh终端不能使用的解决办法
+### 宝塔面板里的ssh终端不能使用的解决办法
 
 
 需要对 flask_sockets 库的源代码进行手动修改。
@@ -114,12 +113,13 @@ self.url_map.add(Rule(rule, endpoint=f, websocket=True))
 
 
 
-适用宝塔面板7.9版本的命令（7.9版本不支持去除强制绑定账号）：
-wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
-
+### 适用宝塔面板7.9版本的命令（7.9版本不支持去除强制绑定账号）：
 
 ```
-解决aarch64  编译安装PHP5.x 报错
+wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
+
+```
+### 解决aarch64  编译安装PHP5.x 报错
 修改PHP安装包Zend/zend_multiply.h第65、66行左右（“+”为修改后内容），PHP5.x 版本通用。
 
  	__asm__("mul %0, %2, %3\n"										\
@@ -141,8 +141,6 @@ wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
 php包安装路径/www/server/php/56/src，已经解压出了来，直接修改保存就可以了。
 
 因为宝塔编译安装要点时间，所以在一开始安装就修改，不要等到安装失败再修改。
-
-```
 
 
 
