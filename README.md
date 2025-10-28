@@ -48,7 +48,7 @@ echo “True” > /www/server/panel/data/ipv6.pl
 echo “True” > /www/server/panel/data/ssl.pl
 
 ```
-### 限制日志
+### 限制日志限制日志1M
 
 ```
 sudo journalctl --vacuum-size=1M
@@ -63,7 +63,7 @@ rm -rf /opt/threatbook
 
 ```
 
-### 限制日志1M
+### 懂得都懂
 
 
 
