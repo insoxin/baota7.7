@@ -82,6 +82,38 @@ mv panelPlugin.py /www/server/panel/class/panelPlugin.py
 curl https://download.bt.cn/tools/auto_node.sh | bash
 ```
 
+宝塔面板打开插件卡在获取模板界面或者无法下载文件：TypeError: send_file() got an unexpected keyword argument 'add_etags'
+
+```
+/www/server/panel/pyenv/bin/python3.7 -m pip install --upgrade pip
+```
+
+宝塔面板里的ssh终端不能使用的解决办法
+
+
+需要对 flask_sockets 库的源代码进行手动修改。
+```
+sed -i '78s|self.url_map.add(Rule(rule, endpoint=f))|self.url_map.add(Rule(rule, endpoint=f, websocket=True))|' /www/server/panel/class/flask_sockets.py
+
+```
+
+具体的修改如下：
+
+修改文件：/www/server/panel/class/flask_sockets.py，第78行
+
+```
+self.url_map.add(Rule(rule, endpoint=f))
+```
+修改为：
+
+```
+self.url_map.add(Rule(rule, endpoint=f, websocket=True))
+```
+
+
+
+
+
 适用宝塔面板7.9版本的命令（7.9版本不支持去除强制绑定账号）：
 wget -O optimize.sh http://f.cccyun.cc/bt/optimize_new.sh && bash optimize.sh
 
