@@ -54,6 +54,18 @@ echo “True” > /www/server/panel/data/ssl.pl
 sudo journalctl --vacuum-size=1M
 
 ```
+### 修改pip镜像源
+
+国外
+```
+pip config set global.index-url https://pypi.org/simple
+```
+
+国内
+```
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
+
+```
 ### 删除木马检测
 
 ```
