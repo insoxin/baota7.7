@@ -17,17 +17,17 @@ sudo tee /etc/fail2ban/jail.local > /dev/null <<EOF
 # 白名单：本地回环
 ignoreip = 127.0.0.1/8 ::1
 
-# 基础封禁时间：1小时
-bantime = 1h
-# 统计时间窗口：10分钟
-findtime = 10m
+# 基础封禁时间
+bantime = 1d
+# 统计时间窗口
+findtime = 1h
 # 允许错误次数：3次
 maxretry = 3
 
 # --- 开启递增封禁 (越封越久) ---
 bantime.increment = true
 bantime.factor = 1
-bantime.maxtime = 5w
+bantime.maxtime = 10w
 
 [sshd]
 enabled = true
@@ -41,8 +41,8 @@ backend = %(sshd_backend)s
 enabled  = true
 logpath  = /var/log/fail2ban.log
 banaction = %(banaction_allports)s
-bantime  = 1w
-findtime = 1d
+bantime  = 1y
+findtime = 1w
 maxretry = 5
 EOF
 
