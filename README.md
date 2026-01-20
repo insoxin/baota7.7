@@ -90,12 +90,21 @@ mv panelPlugin.py /www/server/panel/class/panelPlugin.py
 
 ### fail2ban 安装及配置
 
+
+
 自动安装 Fail2ban
+
 • 自动创建 jail.local (不修改原文件)
+
 • 开启 SSH 防护 (Aggressive 模式)
+
 • 开启递增封禁 (越封越久)
+
 • 开启 Recidive (专门针对惯犯进行周级别的封禁)
+
 • 设置白名单 (自动加入本地 IP)
+
+
 
 ```
 wget -O install_fail2ban.sh https://raw.githubusercontent.com/insoxin/baota7.7/main/install_fail2ban.sh && bash install_fail2ban.sh
