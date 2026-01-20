@@ -20,7 +20,7 @@ ignoreip = 127.0.0.1/8 ::1
 # 基础封禁时间
 bantime = 1d
 # 统计时间窗口
-findtime = 1h
+findtime = 4h
 # 允许错误次数：3次
 maxretry = 3
 
