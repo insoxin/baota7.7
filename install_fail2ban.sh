@@ -84,6 +84,15 @@ findtime = 1w
 maxretry = 5
 EOF
 
+# 8.5 【关键修复】预创建日志文件，防止 recidive 找不到文件而崩溃
+echo "正在初始化 Fail2ban 日志文件环境..."
+if [ ! -f /var/log/fail2ban.log ]; then
+    sudo touch /var/log/fail2ban.log
+    sudo chmod 640 /var/log/fail2ban.log
+    # 适配 Debian/Ubuntu 的默认日志用户组习惯
+    sudo chown root:adm /var/log/fail2ban.log
+fi
+
 # 9. 重启服务
 echo "正在重启服务..."
 sudo systemctl enable fail2ban
@@ -93,4 +102,5 @@ echo "==========================================="
 echo "Fail2ban 安装完成！"
 echo "SSH 后端模式: $SSH_BACKEND"
 echo "检查状态命令: sudo fail2ban-client status sshd"
+echo "检查惯犯命令: sudo fail2ban-client status recidive"
 echo "==========================================="
