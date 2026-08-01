@@ -41,12 +41,24 @@ wget -O optimize.sh https://raw.githubusercontent.com/insoxin/baota7.7/main/opti
 ```
 echo “True” > /www/server/panel/data/ipv6.pl
 ```
+
 ### 开启ssl
 
 ```
 
 echo “True” > /www/server/panel/data/ssl.pl
 
+```
+### bt-panel-ip-ssl.sh —— 用 acme.sh 为宝塔面板后台申请 Let's Encrypt IPv4 证书
+```
+    mkdir -p /www/tool/acmesh
+    cd /www/tool/acmesh
+
+    curl -fsSLO https://raw.githubusercontent.com/insoxin/baota7.7/main/bt-panel-ip-ssl.sh
+    curl -fsSLO https://raw.githubusercontent.com/insoxin/baota7.7/main/acme-444-toggle.sh
+    chmod +x *.sh
+
+    bash bt-panel-ip-ssl.sh
 ```
 ### 限制日志限制日志1M
 
