@@ -37,6 +37,22 @@ wget -O optimize.sh https://raw.githubusercontent.com/insoxin/baota7.7/main/opti
 
 ## 其他备份
 
+### 综合测试脚本
+
+```
+wget -qO- bench.sh | bash
+
+```
+
+### 一键开启BBR，适用于较新的Debian、Ubuntu
+```
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+sysctl net.ipv4.tcp_available_congestion_control
+lsmod | grep bbr
+```
+
 ### 开ipv6
 ```
 echo “True” > /www/server/panel/data/ipv6.pl
