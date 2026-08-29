@@ -25,7 +25,12 @@ EOF
 
 systemctl restart systemd-journald
 
-# 立即清理旧日志
+# 先强制当前日志轮转
+
+journalctl --rotate
+
+# 再清理旧日志
+
 journalctl --vacuum-size=10M
 
 
